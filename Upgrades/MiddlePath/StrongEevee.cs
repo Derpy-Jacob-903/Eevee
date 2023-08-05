@@ -4,6 +4,7 @@ using BTD_Mod_Helper.Extensions;
 using Il2CppAssets.Scripts.Models.Towers.Projectiles;
 using Il2CppAssets.Scripts.Utils;
 using Il2CppAssets.Scripts.Unity;
+using Il2CppAssets.Scripts.Models.Towers.Projectiles.Behaviors;
 
 namespace Eevee.Upgrades.MiddlePath
 {
@@ -18,7 +19,15 @@ namespace Eevee.Upgrades.MiddlePath
         public override void ApplyUpgrade(TowerModel towerModel)
         {
             var projectileModel = towerModel.GetAttackModel().GetDescendant<ProjectileModel>();
-            projectileModel.GetDamageModel().damage += 2;
+            if (Main.AltStrongEevee)
+            {
+                projectileModel.GetDamageModel().damage += 1;
+                projectileModel.AddBehavior(new DamageModifierForTagModel("DamageModifierForTagModel_", "Ceramic,Fortified", 1, 1, false, false));
+            }
+            else 
+            {
+                projectileModel.GetDamageModel().damage += 2;
+            }
         }
     }
 }

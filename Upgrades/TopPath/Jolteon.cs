@@ -32,7 +32,15 @@ namespace Eevee.Upgrades.TopPath
         public override string BaseDisplay => Generic2dDisplay;
         public override void ModifyDisplayNode(UnityDisplayNode node)
         {
-            NodeLoader.NodeLoader.LoadNode(node, "Jolteon", mod);
+            if (Main.Use2DDisplay)
+            {
+                Set2DTexture(node, "Blitza");
+                node.transform.GetChild(0).transform.localScale = 0.2f * Vector3.one;
+            }
+            else
+            {
+                NodeLoader.NodeLoader.LoadNode(node, "Jolteon", mod);
+            }
         }
     }
 }

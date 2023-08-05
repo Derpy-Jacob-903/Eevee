@@ -23,7 +23,7 @@ namespace Eevee.Upgrades.TopPath
             towerModel.range += 20;
             attackModel.range += 20;
             attackModel.weapons[0].projectile.GetDamageModel().damage += 4;
-            attackModel.weapons[0].projectile.GetDamageModel().damage += 4;
+            attackModel.weapons[1].projectile.GetDamageModel().damage += 4;
             projectileModel.pierce += 8;
         }
     }

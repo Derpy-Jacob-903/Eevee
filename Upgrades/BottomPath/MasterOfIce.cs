@@ -15,7 +15,7 @@ namespace Eevee.Upgrades.MiddlePath
         public override int Cost => 50000;
         public override string Portrait => "GlaceonPortrait";
         public override SpriteReference IconReference => Game.instance.model.GetTowerFromId("IceMonkey-005").GetUpgrade(BOTTOM, 5).icon;
-        public override string Description => "Increased range, damage, attack speed and pierce";
+        public override string Description => "Increased range, damage, attack speed and pierce. Adds secondary icicle attack.";
 
         public override void ApplyUpgrade(TowerModel towerModel)
         {
