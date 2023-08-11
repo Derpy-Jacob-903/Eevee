@@ -20,11 +20,11 @@ namespace Eevee
         {
             MelonLogger.Msg("Eevee loaded!");
         }
-        public static readonly ModSettingBool Use2DDisplay = true;
-        public static readonly ModSettingBool baseEeveeNerfRange = false;
-        public static readonly ModSettingBool baseEeveeNerfPierce = false;
-        public static readonly ModSettingBool baseEeveeNerfCost = true;
-        public static readonly ModSettingBool AltStrongEevee = false;
+        public static readonly ModSettingBool Use2DDisplay = false;
+        //public static readonly ModSettingBool baseEeveeNerfRange = false;
+        //public static readonly ModSettingBool baseEeveeNerfPierce = false;
+        //public static readonly ModSettingBool baseEeveeNerfCost = true;
+        //public static readonly ModSettingBool AltStrongEevee = false;
         //public static readonly ModSettingBool flareonNerf = false;
     }
     public class Eevee : ModTower
@@ -44,16 +44,16 @@ namespace Eevee
         public override void ModifyBaseTowerModel(TowerModel towerModel)
         {
             var attackModel = towerModel.GetAttackModel();
-            if (!Main.baseEeveeNerfRange)
-            {
+            //if (!Main.baseEeveeNerfRange)
+            //{
                 towerModel.range += 10;
                 attackModel.range += 10;
-            }
-            if (!Main.baseEeveeNerfPierce)
-            {
-                var projectile = attackModel.weapons[0].projectile;
-                projectile.pierce += 2;
-            }
+            //}
+            //if (!Main.baseEeveeNerfPierce)
+            //{
+                //var projectile = attackModel.weapons[0].projectile;
+                //projectile.pierce += 2;
+            //}
             towerModel.ApplyDisplay<EeveeDisplay>();
         }
         
@@ -61,18 +61,19 @@ namespace Eevee
     public class EeveeDisplay : ModDisplay
     {
         public override string BaseDisplay => Generic2dDisplay;
-        public override float Scale => 0.2f;
+        public override float Scale => 1f;
         public override void ModifyDisplayNode(UnityDisplayNode node)
         {
             if (Main.Use2DDisplay)
             {
                 Set2DTexture(node, "EeveeBaseDisplay");
-                node.transform.GetChild(0).transform.localScale = 0.2f * Vector3.one;
             }
             else
             {
                 NodeLoader.NodeLoader.LoadNode(node, "Eevee", mod);
             }
+
+            node.transform.GetChild(0).transform.localScale = 0.2f * Vector3.one;
         }
     }
 }
