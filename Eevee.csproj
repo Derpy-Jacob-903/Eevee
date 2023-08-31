@@ -11,4 +11,12 @@
     </PropertyGroup>
 
     <Import Project="..\btd6.targets" />
+
+    <ItemGroup>
+      <None Remove="Upgrades\MiddlePath\EeveeSeesEverything.~cs~" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Include="Upgrades\MiddlePath\EeveeSeesEverything.~cs~" />
+    </ItemGroup>
 </Project>

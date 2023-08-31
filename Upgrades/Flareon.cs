@@ -87,8 +87,8 @@ namespace Eevee.Upgrades.MiddlePath
         {
             var attackModel = towerModel.GetAttackModel();
             var projectileModel = attackModel.GetDescendant<ProjectileModel>();
-            projectileModel.GetDamageModel().damage += 8;
-            projectileModel.pierce += 5;
+            //projectileModel.GetDamageModel().damage += 8;
+            //projectileModel.pierce += 5;
             attackModel.weapons[0].projectile = Game.instance.model.GetTowerFromId("Gwendolin 15").GetAttackModel().weapons[0].projectile.Duplicate();
             //attackModel.weapons[0].projectile.SetHitCamo(true);
         }
@@ -107,6 +107,7 @@ namespace Eevee.Upgrades.MiddlePath
         {
             var attackModel = towerModel.GetAttackModel();
             var projectileModel = attackModel.GetDescendant<ProjectileModel>();
+            attackModel.weapons[0].projectile = Game.instance.model.GetTowerFromId("Gwendolin 20").GetAttackModel().weapons[0].projectile.Duplicate();
             towerModel.range += 20;
             attackModel.range += 20;
             //projectileModel.pierce += 6;
