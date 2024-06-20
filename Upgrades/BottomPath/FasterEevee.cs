@@ -5,6 +5,7 @@ using Il2CppAssets.Scripts.Models.Towers.Projectiles;
 using Il2CppAssets.Scripts.Models.Towers.Filters;
 using Il2CppAssets.Scripts.Utils;
 using Il2CppAssets.Scripts.Unity;
+using Il2CppNinjaKiwi.Common.ResourceUtils;
 
 namespace Eevee.Upgrades.MiddlePath
 {

@@ -4,6 +4,7 @@ using BTD_Mod_Helper.Extensions;
 using Il2CppAssets.Scripts.Unity;
 using Il2CppAssets.Scripts.Utils;
 using BTD_Mod_Helper.Api.Display;
+using Il2CppNinjaKiwi.Common.ResourceUtils;
 
 namespace Eevee.Upgrades.MiddlePath
 {
@@ -22,6 +23,7 @@ namespace Eevee.Upgrades.MiddlePath
             attackModel.weapons[0].projectile = Game.instance.model.GetTowerFromId("IceMonkey-003").GetAttackModel().weapons[0].projectile.Duplicate();
             towerModel.GetWeapon().rate *= 0.8f;
             attackModel.weapons[0].projectile.SetHitCamo(true);
+            //attackModel.weapons[0].projectile.RemoveFilter(attackModel.weapons[0].projectile.filters[1]);
             towerModel.ApplyDisplay<GlaceonDisplay>();
         }
     }

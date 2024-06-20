@@ -6,6 +6,7 @@ using Il2CppAssets.Scripts.Unity;
 using Il2CppAssets.Scripts.Utils;
 using Il2CppAssets.Scripts.Models.Towers.Filters;
 using BTD_Mod_Helper.Api.Display;
+using Il2CppNinjaKiwi.Common.ResourceUtils;
 
 namespace Eevee.Upgrades.MiddlePath
 {
@@ -23,7 +24,8 @@ namespace Eevee.Upgrades.MiddlePath
             var attackModel = towerModel.GetAttackModel(); 
             var projectileModel = attackModel.GetDescendant<ProjectileModel>();
             projectileModel.pierce += 2;
-            attackModel.weapons[0].projectile = Game.instance.model.GetTowerFromId("Gwendolin 15").GetAttackModel().weapons[0].projectile.Duplicate();
+            //attackModel.weapons[0].projectile = Game.instance.model.GetTowerFromId("Gwendolin 15").GetAttackModel().weapons[0].projectile.Duplicate();
+            attackModel.weapons[0].projectile = Game.instance.model.GetTowerFromId("Gwendolin 6").GetAttackModel().weapons[0].projectile.Duplicate();
             towerModel.GetWeapon().rate *= 0.5f;
             attackModel.weapons[0].projectile.SetHitCamo(true);
             towerModel.ApplyDisplay<FlareonDisplay>();

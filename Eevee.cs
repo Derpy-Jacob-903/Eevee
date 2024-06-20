@@ -61,7 +61,7 @@ namespace Eevee
     public class EeveeDisplay : ModDisplay
     {
         public override string BaseDisplay => Generic2dDisplay;
-        public override float Scale => 0.2f;
+        public override float Scale => 1f;
         public override void ModifyDisplayNode(UnityDisplayNode node)
         {
             if (Main.Use2DDisplay)
