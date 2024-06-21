@@ -8,13 +8,13 @@ using Il2CppNinjaKiwi.Common.ResourceUtils;
 
 namespace Eevee.Upgrades.TopPath
 {
-    public class PiercedPins : ModUpgrade<Eevee>
+    public class SharperPins : ModUpgrade<Eevee>
     {
         public override int Path => TOP;
         public override int Tier => 1;
         public override int Cost => 400;
         public override SpriteReference IconReference => Game.instance.model.GetTowerFromId("DartMonkey-100").GetUpgrade(TOP, 1).icon;
-        public override string Description => "Plus one Pierce";
+        public override string Description => "Can pop 1 extra Bloon per pin.";
 
         public override void ApplyUpgrade(TowerModel towerModel)
         {
