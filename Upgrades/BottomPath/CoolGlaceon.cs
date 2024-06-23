@@ -23,8 +23,9 @@ namespace Eevee.Upgrades.MiddlePath
             var projectileModel = towerModel.GetAttackModel().GetDescendant<ProjectileModel>();
             projectileModel.GetDamageModel().damage += 2;
             projectileModel.pierce += 2;
+            projectileModel.maxPierce += 2;
             var attackModel = towerModel.GetAttackModel();
-            attackModel.AddBehavior(Game.instance.model.GetTowerFromId("IceMonkey-004").GetAttackModel().weapons[0].Duplicate());
+            //attackModel.AddBehavior(Game.instance.model.GetTowerFromId("IceMonkey-004").GetAttackModel().weapons[0].Duplicate());
         }
     }
 }
