@@ -40,6 +40,10 @@ namespace Eevee.Upgrades.MiddlePath
             else
             {
                 NodeLoader.NodeLoader.LoadNode(node, "Glaceon", mod);
+                foreach (SkinnedMeshRenderer s in node.GetComponentsInChildren<SkinnedMeshRenderer>())
+                {
+                    s.SetOutlineColor(new Color(48.2f, 84.7f, 1f));
+                }
             }
         }
     }

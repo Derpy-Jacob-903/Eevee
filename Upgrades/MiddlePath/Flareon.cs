@@ -44,6 +44,10 @@ namespace Eevee.Upgrades.MiddlePath
             else
             {
                 NodeLoader.NodeLoader.LoadNode(node, "Flareon", mod);
+                foreach (SkinnedMeshRenderer s in node.GetComponentsInChildren<SkinnedMeshRenderer>())
+                {
+                    s.SetOutlineColor(new Color(42.4f, 21.2f, 0.4f));
+                }
             }
         }
     }

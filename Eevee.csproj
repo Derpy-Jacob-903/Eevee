@@ -11,4 +11,10 @@
     </PropertyGroup>
 
     <Import Project="..\btd6.targets" />
+
+    <ItemGroup>
+      <Compile Remove="HenryUnityProject\**" />
+      <EmbeddedResource Remove="HenryUnityProject\**" />
+      <None Remove="HenryUnityProject\**" />
+    </ItemGroup>
 </Project>

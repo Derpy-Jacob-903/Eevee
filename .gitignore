@@ -341,3 +341,13 @@ healthchecksdb
 
 .vs/
 obj/
+*.zip
+/EeveeUnityProject
+/obj
+/obj
+/obj
+/obj/Debug
+*.webp
+/obj
+/.vs
+obj/Debug/net6.0/Eevee.AssemblyInfo.cs

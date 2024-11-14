@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Eevee")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+39c1fb7b339e7d7edadaf317227fccf3ca351fb3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b90fe12956f4b4be5128e31809f724e7d673e11b")]
 [assembly: System.Reflection.AssemblyProductAttribute("Eevee")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Eevee")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

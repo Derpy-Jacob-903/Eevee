@@ -5,6 +5,8 @@ using Il2CppAssets.Scripts.Unity;
 using Il2CppAssets.Scripts.Utils;
 using BTD_Mod_Helper.Api.Display;
 using Il2CppNinjaKiwi.Common.ResourceUtils;
+using Il2CppAssets.Scripts.Models.Towers.Projectiles.Behaviors;
+using Il2CppAssets.Scripts.Models.Towers.Filters;
 
 namespace Eevee.Upgrades.TopPath
 {
@@ -23,9 +25,24 @@ namespace Eevee.Upgrades.TopPath
             towerModel.range += 10;
             var attackModel = towerModel.GetAttackModel();
             attackModel.range += 10;
+
+            var myPierce = attackModel.weapons[0].projectile.pierce;
+            var myMaxPierce = attackModel.weapons[0].projectile.maxPierce;
+
             attackModel.weapons[0].projectile = Game.instance.model.GetTowerFromId("Druid-200").GetAttackModel().weapons[1].projectile.Duplicate();
             attackModel.weapons[0].projectile.SetHitCamo(true);
+
+            towerModel.GetDescendants<FilterInvisibleModel>().ForEach(model => model.isActive = false);
+
             towerModel.ApplyDisplay<JolteonDisplay>();
+
+            if (Main.JolteonRework)
+            {
+                var lightning = attackModel.weapons[0].projectile.GetBehavior<LightningModel>();
+                attackModel.weapons[0].projectile.maxPierce = myMaxPierce;
+                attackModel.weapons[0].projectile.pierce = myPierce + 12;
+                lightning.splits = 1;
+            }
         }
     }
     public class JolteonDisplay : ModDisplay
@@ -41,6 +58,10 @@ namespace Eevee.Upgrades.TopPath
             else
             {
                 NodeLoader.NodeLoader.LoadNode(node, "Jolteon", mod);
+                foreach (SkinnedMeshRenderer s in node.GetComponentsInChildren<SkinnedMeshRenderer>())
+                {
+                    s.SetOutlineColor(new Color(26.7f, 14.1f, 8.6f));
+                }
             }
         }
     }

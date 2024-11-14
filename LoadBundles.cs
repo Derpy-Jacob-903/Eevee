@@ -9,6 +9,8 @@ global using Il2CppAssets.Scripts.Models.TowerSets;
 using BTD_Mod_Helper.Extensions;
 using static BTD_Mod_Helper.Api.ModContent;
 using BTD_Mod_Helper;
+using BTD_Mod_Helper.Api.Display;
+using System.Linq;
 
 namespace NodeLoader
 {
@@ -24,6 +26,10 @@ namespace NodeLoader
             node.transform.GetChild(0).transform.localRotation = Quaternion.Euler(0, 0, 0);
             node.transform.GetChild(0).transform.localPosition = Vector3.zero;
             node.transform.GetChild(0).transform.localPosition -= new Vector3(0, 0, 0);
+            foreach (SkinnedMeshRenderer s in node.GetComponentsInChildren<SkinnedMeshRenderer>())
+            {
+                s.ApplyOutlineShader();
+            }
         }
     }
 }

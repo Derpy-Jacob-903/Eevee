@@ -8,11 +8,11 @@ using Il2CppNinjaKiwi.Common.ResourceUtils;
 
 namespace Eevee.Upgrades.TopPath
 {
-    public class ElectroBall : ModUpgrade <Eevee>
+    public class ElectroBall : ModUpgrade<Eevee>
     {
         public override int Path => TOP;
         public override int Tier => 4;
-        public override int Cost => 19000;
+        public override int Cost => 4500;
         public override string Portrait => "BlitzaPortrait";
         public override SpriteReference IconReference => Game.instance .model.GetTowerFromId("Druid-400").GetUpgrade (TOP,4).icon;
         public override string Description => "Jolteon attacks with an electro ball attack and increased damage";
